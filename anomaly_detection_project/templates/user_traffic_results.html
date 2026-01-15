@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kullanıcı Trafik Analizi</title>
+    <style>
+@font-face {
+    font-family: 'NotoSans';
+    src: url('/static/fonts/NotoSans-Regular.ttf');
+}
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            text-align: center;
+            padding: 40px;
+            font-family: 'NotoSans', sans-serif;
+        }
+        img {
+            width: 80%;
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌐 Yüklenen Trafik Analizi</h1>
+
+    <img src="{{ url_for('static', filename='plots/user_protocol_distribution.png') }}">
+    <img src="{{ url_for('static', filename='plots/user_packet_length_hist.png') }}">
+    <img src="{{ url_for('static', filename='plots/user_anomaly_scatter.png') }}">
+
+    <br>
+    <a href="/download-user-traffic-pdf">📥 PDF Olarak İndir</a>
+    <br><br>
+    <a href="/">⬅ Ana Sayfa</a>
+
+</body>
+</html>

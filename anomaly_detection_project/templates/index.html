@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Anomali Tespit Sistemi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left;
+            display: inline-block;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+
+        .link-list {
+            margin-top: 40px;
+        }
+
+        .link-list a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 18px;
+            background-color: #17a2b8;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .link-list a:hover {
+            background-color: #117a8b;
+        }
+
+        .upload-container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.upload-container h2 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.upload-container p {
+    font-size: 14px;
+    color: #555;
+}
+
+.upload-container input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 90%;
+    border-radius: 6px;
+}
+
+.upload-container button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.upload-container button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ağ Anomali Tespit Sistemi</h1>
+
+        <p>
+            Bu sistem, farklı ağ trafiği veri setlerini kullanarak makine öğrenmesi ve istatistiksel teknikler yardımıyla anormal paketleri tespit etmeyi amaçlar.
+            <strong>CICIDS2017</strong>, <strong>KDD99</strong>, ve <strong>UNSW-NB15</strong> gibi veri setlerini analiz ederek modellerin başarılarını karşılaştırır.
+            Aynı zamanda kullanıcıdan alınan PCAP dosyasını da işleyerek grafiksel analizler sunar.
+        </p>
+
+        <ul>
+            <li>📊 Makine öğrenmesi tabanlı sınıflandırma (Random Forest, SVM, XGBoost...)</li>
+            <li>🌲 Anomali tespiti (Isolation Forest, One-Class SVM)</li>
+            <li>🖼️ Confusion Matrix, ROC Curve, Feature Importance grafikleri</li>
+            <li>🌐 Gerçek trafik analizi ve görselleştirme</li>
+            <li>📄 Sonuçların PDF olarak dışa aktarılması</li>
+        </ul>
+
+
+
+        <div class="link-list">
+            <a href="/results">📊 Model Sonuçları</a>
+            <a href="/traffic-analysis">🌐 Trafik Analizi</a>
+            <a href="/download-pdf" class="button">📥 PDF Raporunu İndir</a>
+        </div>
+    </div>
+
+<div class="upload-container">
+    <h2>📂 Kendi Trafik Verinizi Yükleyin</h2>
+    <p>PCAP ya da CSV formatındaki kendi ağ trafiğinizi yükleyerek analiz başlatabilirsiniz.</p>
+
+    <form action="/upload-traffic" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv,.pcap" required>
+        <br><br>
+        <button type="submit">🚀 Trafik Analizini Başlat</button>
+    </form>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ağ Trafik Analizi</title>
+</head>
+<body>
+    <h1>📦 Ağ Trafik Analizi</h1>
+    <p>Protokol dağılımı, port bazlı analiz ve anomali tespiti grafikleri:</p>
+
+    <img src="{{ url_for('static', filename='plots/protocol_distribution.png') }}" alt="Protokol Dağılımı" width="600">
+    <img src="{{ url_for('static', filename='plots/packet_length_hist.png') }}" alt="Paket Uzunluğu Histogramı" width="600">
+    <img src="{{ url_for('static', filename='plots/anomaly_scatter.png') }}" alt="Anomali Tespiti" width="600">
+
+    <br><br>
+    <a href="/">⬅ Ana Sayfa</a>
+</body>
+</html>

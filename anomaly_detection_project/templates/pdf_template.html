@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+    @font-face {
+    font-family: 'NotoSans';
+    src: url('/static/fonts/NotoSans-Regular.ttf');
+}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 30px;
+            font-size: 14px;
+            font-family: 'NotoSans', sans-serif;
+        }
+        h1, h2 {
+            margin-top: 40px;
+            text-align: center;
+            color: #2c3e50;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+        }
+        img {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+        }
+        .section {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📊 Anomali Tespit Sistemi Sonuçları</h1>
+
+    <div class="section">
+        <h2>CICIDS2017 Sonuçları</h2>
+        {{ cic_table|safe }}
+        <img src="static/plots/confusion_matrix.png">
+        <img src="static/plots/roc_curve.png">
+        <img src="static/plots/feature_importance.png">
+    </div>
+
+    <div class="section">
+        <h2>KDD99 Sonuçları</h2>
+        {{ kdd_table|safe }}
+        <img src="static/plots/kdd_confusion_matrix.png">
+        <img src="static/plots/kdd_roc_curve.png">
+        <img src="static/plots/kdd_feature_importance.png">
+    </div>
+
+    <div class="section">
+        <h2>UNSW-NB15 Sonuçları</h2>
+        {{ unsw_table|safe }}
+        <img src="static/plots/unsw_confusion_matrix.png">
+        <img src="static/plots/unsw_roc_curve.png">
+        <img src="static/plots/unsw_feature_importance.png">
+    </div>
+
+    <div class="section">
+        <h2>🌐 Kullanıcı Trafik Analizi</h2>
+        <img src="static/plots/user_protocol_distribution.png">
+        <img src="static/plots/user_packet_length_hist.png">
+        <img src="static/plots/user_anomaly_scatter.png">
+    </div>
+
+</body>
+</html>
